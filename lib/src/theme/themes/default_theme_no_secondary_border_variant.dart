@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ark/src/ui/card/theme/card.theme.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import 'package:flutter_ark/src/theme/text_theme/text_styles_default.dart';
@@ -283,6 +284,23 @@ final class ArkDefaultThemeNoSecondaryBorderVariant extends ArkThemeVariant {
       scaleFactor: 0.05,
       animationDuration: Duration(milliseconds: 300),
       animationCurve: Cubic(0.215, 0.61, 0.355, 1),
+    );
+  }
+
+  @override
+  ArkCardTheme cardTheme() {
+    return ArkCardTheme(
+      backgroundColor: colorScheme.card,
+      padding: const EdgeInsets.all(24),
+      border: ArkBorder.all(color: colorScheme.border, width: 1),
+      radius: const BorderRadius.all(Radius.circular(8)),
+      shadows: ArkShadows.sm,
+      rowMainAxisSize: MainAxisSize.min,
+      rowCrossAxisAlignment: CrossAxisAlignment.start,
+      rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+      columnMainAxisSize: MainAxisSize.min,
+      columnCrossAxisAlignment: CrossAxisAlignment.start,
+      columnMainAxisAlignment: MainAxisAlignment.start,
     );
   }
 }

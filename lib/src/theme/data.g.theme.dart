@@ -19,6 +19,7 @@ mixin _$ArkThemeData {
       linkButtonTheme: ArkButtonTheme.lerp(a.linkButtonTheme, b.linkButtonTheme, t),
       primaryToastTheme: ArkToastTheme.lerp(a.primaryToastTheme, b.primaryToastTheme, t),
       destructiveToastTheme: ArkToastTheme.lerp(a.destructiveToastTheme, b.destructiveToastTheme, t),
+      cardTheme: ArkCardTheme.lerp(a.cardTheme, b.cardTheme, t),
       radius: BorderRadius.lerp(a.radius, b.radius, t),
       buttonSizesTheme: ArkButtonSizesTheme.lerp(a.buttonSizesTheme, b.buttonSizesTheme, t),
       decoration: ArkDecoration.lerp(a.decoration, b.decoration, t),
@@ -49,7 +50,8 @@ mixin _$ArkThemeData {
     ArkBreakpoints? breakpoints,
     ArkDecoration? decoration,
     ArkTextTheme? textTheme,
-    ArkSonnerTheme? sonnerTheme
+    ArkSonnerTheme? sonnerTheme,
+    ArkCardTheme? cardTheme
 }) {
     final _this = (this as ArkThemeData);
 
@@ -64,10 +66,11 @@ mixin _$ArkThemeData {
       linkButtonTheme: linkButtonTheme ?? _this.linkButtonTheme,
       primaryToastTheme: primaryToastTheme ?? _this.primaryToastTheme,
       destructiveToastTheme: destructiveToastTheme ?? _this.destructiveToastTheme,
+      cardTheme: cardTheme ?? _this.cardTheme,
       radius: radius ?? _this.radius,
       disabledOpacity: disabledOpacity ?? _this.disabledOpacity,
       hoverStrategies: hoverStrategies ?? _this.hoverStrategies,
-      disableSecondaryBorder: disableSecondaryBorder ?? _this.disableSecondaryBorder
+      disableSecondaryBorder: disableSecondaryBorder ?? _this.disableSecondaryBorder,
     );
   }
 
@@ -95,6 +98,7 @@ mixin _$ArkThemeData {
         decoration: _this.decoration.merge(other.decoration),
         breakpoints: other.breakpoints,
         disableSecondaryBorder: other.disableSecondaryBorder,
+        cardTheme: _this.cardTheme.merge(other.cardTheme)
     );
   }
 }

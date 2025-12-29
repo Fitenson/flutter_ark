@@ -4,6 +4,7 @@ import 'package:flutter_ark/src/theme/decorator.dart';
 import 'package:flutter_ark/src/theme/text_theme/theme.dart';
 import 'package:flutter_ark/src/ui/button/button_sizes.dart';
 import 'package:flutter_ark/src/ui/button/theme/button.theme.dart';
+import 'package:flutter_ark/src/ui/card/theme/card.theme.dart';
 import 'package:flutter_ark/src/ui/sonner/theme/sonner.theme.dart';
 import 'package:flutter_ark/src/ui/toast/theme/toast.theme.dart';
 import 'package:flutter_ark/src/utils/gesture_detector.dart';
@@ -23,6 +24,7 @@ abstract base class ArkBaseTheme {
     required this.primaryToastTheme,
     required this.destructiveToastTheme,
     required this.sonnerTheme,
+    required this.cardTheme,
     required this.textTheme,
     required this.linkButtonTheme,
     required this.buttonSizesTheme,
@@ -45,6 +47,7 @@ abstract base class ArkBaseTheme {
   final ArkToastTheme primaryToastTheme;
   final ArkToastTheme destructiveToastTheme;
   final ArkSonnerTheme sonnerTheme;
+  final ArkCardTheme cardTheme;
   final ArkTextTheme textTheme;
   final ArkButtonSizesTheme buttonSizesTheme;
   final ArkHoverStrategies hoverStrategies;
@@ -67,6 +70,7 @@ abstract class ArkThemeVariant {
   ArkToastTheme primaryToastTheme();
   ArkToastTheme destructiveToastTheme();
   ArkSonnerTheme sonnerTheme();
+  ArkCardTheme cardTheme();
   ArkHoverStrategies hoverStrategies();
   ArkButtonSizesTheme buttonSizesTheme();
 }

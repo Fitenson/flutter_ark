@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ark/src/theme/text_theme/theme.dart';
+import 'package:flutter_ark/src/ui/card/theme/card.theme.dart';
 import 'package:flutter_ark/src/ui/sonner/theme/sonner.theme.dart';
 import 'package:flutter_ark/src/ui/toast/theme/toast.theme.dart';
 import 'package:theme_extensions_builder_annotation/theme_extensions_builder_annotation.dart';
@@ -33,6 +34,7 @@ final class ArkThemeData extends ArkBaseTheme with _$ArkThemeData {
     ArkToastTheme? destructiveToastTheme,
     ArkSonnerTheme? sonnerTheme,
     ArkTextTheme? textTheme,
+    ArkCardTheme? cardTheme,
     ArkButtonSizesTheme? buttonSizesTheme,
     ArkHoverStrategies? hoverStrategies,
     ArkBreakpoints? breakpoints,
@@ -76,6 +78,7 @@ final class ArkThemeData extends ArkBaseTheme with _$ArkThemeData {
         destructiveToastTheme: effectiveVariant.destructiveToastTheme().merge(destructiveToastTheme),
         linkButtonTheme: effectiveVariant.linkButtonTheme().merge(linkButtonTheme),
         sonnerTheme: effectiveVariant.sonnerTheme().merge(sonnerTheme),
+        cardTheme: effectiveVariant.cardTheme().merge(cardTheme),
         hoverStrategies: hoverStrategies ?? effectiveVariant.hoverStrategies(),
         textTheme: effectiveTextTheme,
         radius: effectiveRadius,
@@ -100,6 +103,7 @@ final class ArkThemeData extends ArkBaseTheme with _$ArkThemeData {
     required super.primaryToastTheme,
     required super.destructiveToastTheme,
     required super.sonnerTheme,
+    required super.cardTheme,
     required super.textTheme,
     required super.buttonSizesTheme,
     required super.hoverStrategies,
