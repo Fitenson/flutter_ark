@@ -6,6 +6,7 @@ import 'package:flutter_ark/src/ui/sonner/sonner.dart';
 import 'package:flutter_ark/src/ui/toast/toast.dart';
 import 'package:flutter_ark/src/utils/mouse_area.dart';
 import 'package:flutter_ark/src/utils/mouse_cursor_provider.dart';
+import 'package:flutter_ark/flutter_ark.dart';
 import 'package:shadcn_ui/shadcn_ui.dart';
 
 enum ArkAppType {
