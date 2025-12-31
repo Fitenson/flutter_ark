@@ -1,10 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ark/src/theme/color_theme/color_scheme.dart';
 import 'package:flutter_ark/src/theme/decorator.dart';
+import 'package:flutter_ark/src/theme/default_keyboard_toolbar.dart';
 import 'package:flutter_ark/src/theme/text_theme/theme.dart';
 import 'package:flutter_ark/src/ui/button/button_sizes.dart';
 import 'package:flutter_ark/src/ui/button/theme/button.theme.dart';
 import 'package:flutter_ark/src/ui/card/theme/card.theme.dart';
+import 'package:flutter_ark/src/ui/input/theme/input.theme.dart';
 import 'package:flutter_ark/src/ui/sonner/theme/sonner.theme.dart';
 import 'package:flutter_ark/src/ui/toast/theme/toast.theme.dart';
 import 'package:flutter_ark/src/utils/gesture_detector.dart';
@@ -25,6 +27,7 @@ abstract base class ArkBaseTheme {
     required this.destructiveToastTheme,
     required this.sonnerTheme,
     required this.cardTheme,
+    required this.inputTheme,
     required this.textTheme,
     required this.linkButtonTheme,
     required this.buttonSizesTheme,
@@ -32,7 +35,8 @@ abstract base class ArkBaseTheme {
     required this.breakpoints,
     required this.radius,
     required this.disabledOpacity,
-    required this.disableSecondaryBorder
+    required this.disableSecondaryBorder,
+    required this.defaultKeyboardToolbarTheme
   });
 
   final ArkColorScheme colorScheme;
@@ -48,6 +52,7 @@ abstract base class ArkBaseTheme {
   final ArkToastTheme destructiveToastTheme;
   final ArkSonnerTheme sonnerTheme;
   final ArkCardTheme cardTheme;
+  final ArkInputTheme inputTheme;
   final ArkTextTheme textTheme;
   final ArkButtonSizesTheme buttonSizesTheme;
   final ArkHoverStrategies hoverStrategies;
@@ -55,6 +60,7 @@ abstract base class ArkBaseTheme {
   final BorderRadius radius;
   final double disabledOpacity;
   final bool disableSecondaryBorder;
+  final ArkDefaultKeyboardToolbarTheme defaultKeyboardToolbarTheme;
 }
 
 @immutable
@@ -71,6 +77,8 @@ abstract class ArkThemeVariant {
   ArkToastTheme destructiveToastTheme();
   ArkSonnerTheme sonnerTheme();
   ArkCardTheme cardTheme();
+  ArkInputTheme inputTheme();
   ArkHoverStrategies hoverStrategies();
   ArkButtonSizesTheme buttonSizesTheme();
+  ArkDefaultKeyboardToolbarTheme defaultKeyboardToolbarTheme();
 }

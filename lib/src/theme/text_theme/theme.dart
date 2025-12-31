@@ -2,7 +2,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ark/src/theme/text_theme/text_styles_default.dart';
-import 'package:flutter_ark/src/theme/text_theme/text_styles_default.dart';
 import 'package:flutter_ark/src/theme/themes/default_theme_variant.dart';
 
 extension OmitFamilyAndPackageExtension on TextStyle {

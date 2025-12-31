@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ark/src/ui/card/theme/card.theme.dart';
+import 'package:flutter_ark/src/ui/input/theme/input.theme.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import 'package:flutter_ark/src/theme/text_theme/text_styles_default.dart';
@@ -9,6 +10,7 @@ import 'package:flutter_ark/src/theme/themes/base.dart';
 import 'package:flutter_ark/src/theme/color_theme/color_scheme.dart';
 import 'package:flutter_ark/src/theme/decorator.dart';
 import 'package:flutter_ark/src/theme/themes/shadows.dart';
+import 'package:flutter_ark/src/theme/default_keyboard_toolbar.dart';
 
 import 'package:flutter_ark/src/utils/border.dart';
 import 'package:flutter_ark/src/utils/gesture_detector.dart';
@@ -301,6 +303,36 @@ final class ArkDefaultThemeNoSecondaryBorderVariant extends ArkThemeVariant {
       columnMainAxisSize: MainAxisSize.min,
       columnCrossAxisAlignment: CrossAxisAlignment.start,
       columnMainAxisAlignment: MainAxisAlignment.start,
+    );
+  }
+
+  @override
+  ArkInputTheme inputTheme() {
+    return ArkInputTheme(
+      style: effectiveTextTheme.muted,
+      placeholderStyle: effectiveTextTheme.muted,
+      inputPadding: EdgeInsets.zero,
+      decoration: ArkDecoration(
+        border: ArkBorder.all(
+          width: 1,
+          color: colorScheme.border,
+          radius: radius,
+          padding: const EdgeInsets.all(1)
+        )
+      ),
+      gap: 8,
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4)
+    );
+  }
+
+  @override
+  ArkDefaultKeyboardToolbarTheme defaultKeyboardToolbarTheme() {
+    return ArkDefaultKeyboardToolbarTheme(
+      backgroundColor: colorScheme.accent,
+      doneText: 'Done',
+      showDoneButton: true,
+      showNextButton: true,
+      showPreviousButton: true,
     );
   }
 }

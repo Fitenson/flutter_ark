@@ -1,13 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ark/src/theme/color_theme/slate.dart';
-import 'package:flutter_ark/src/theme/data.dart';
-import 'package:flutter_ark/src/theme/theme.dart';
 import 'package:flutter_ark/src/ui/sonner/sonner.dart';
 import 'package:flutter_ark/src/ui/toast/toast.dart';
-import 'package:flutter_ark/src/utils/mouse_area.dart';
-import 'package:flutter_ark/src/utils/mouse_cursor_provider.dart';
 import 'package:flutter_ark/flutter_ark.dart';
-import 'package:shadcn_ui/shadcn_ui.dart';
+import 'package:flutter_ark/src/theme/text_theme/theme.dart';
 
 enum ArkAppType {
   ark,
@@ -262,6 +258,90 @@ class _ArkAppState extends State<ArkApp> {
         );
     }
   }
+
+  TextTheme applyGoogleFontToTextTheme(
+      TextTheme textTheme, {
+        GoogleFontBuilder? googleFontBuilder,
+      }) {
+    if (googleFontBuilder == null) return textTheme;
+    return TextTheme(
+      displayLarge: GoogleFontTextStyle(
+        (textTheme.displayLarge ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      displayMedium: GoogleFontTextStyle(
+        (textTheme.displayMedium ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      displaySmall: GoogleFontTextStyle(
+        (textTheme.displaySmall ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      headlineLarge: GoogleFontTextStyle(
+        (textTheme.headlineLarge ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      headlineMedium: GoogleFontTextStyle(
+        (textTheme.headlineMedium ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      headlineSmall: GoogleFontTextStyle(
+        (textTheme.headlineSmall ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      titleLarge: GoogleFontTextStyle(
+        (textTheme.titleLarge ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      titleMedium: GoogleFontTextStyle(
+        (textTheme.titleMedium ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      titleSmall: GoogleFontTextStyle(
+        (textTheme.titleSmall ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      bodyLarge: GoogleFontTextStyle(
+        (textTheme.bodyLarge ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      bodyMedium: GoogleFontTextStyle(
+        (textTheme.bodyMedium ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      bodySmall: GoogleFontTextStyle(
+        (textTheme.bodySmall ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      labelLarge: GoogleFontTextStyle(
+        (textTheme.labelLarge ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      labelMedium: GoogleFontTextStyle(
+        (textTheme.labelMedium ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+      labelSmall: GoogleFontTextStyle(
+        (textTheme.labelSmall ?? const TextStyle()).omitFamilyAndPackage,
+        builder: googleFontBuilder,
+        overrideFamilyWithBuilder: true,
+      ),
+    );
+  }
 }
 
 
@@ -290,5 +370,34 @@ final class ArkAppBuilder extends StatelessWidget {
           );
         }
     );
+  }
+}
+
+
+class ArkScrollBehaviour extends ScrollBehavior {
+  const ArkScrollBehaviour();
+  
+  @override
+  Widget buildScrollbar(
+      BuildContext context,
+      Widget child,
+      ScrollableDetails details
+  ) {
+    switch(axisDirectionToAxis(details.direction)) {
+      case Axis.horizontal:
+        return child;
+      case Axis.vertical:
+        switch(getPlatform(context)) {
+          case TargetPlatform.macOS:
+          case TargetPlatform.iOS:
+            return CupertinoScrollbar(child: child, controller: details.controller);
+          case TargetPlatform.linux:
+          case TargetPlatform.windows:
+            return Scrollbar(child: child, controller: details.controller);
+          case TargetPlatform.android:
+          case TargetPlatform.fuchsia:
+            return child;
+        }
+    }
   }
 }

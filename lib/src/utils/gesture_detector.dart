@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_ark/src/theme/theme.dart';
-import 'package:flutter_ark/src/utils/extension/tap_details.dart';
+import 'package:flutter_ark/src/utils/extensions/tap_details.dart';
 
 @immutable
 class ArkHoverStrategies {

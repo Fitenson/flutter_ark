@@ -29,6 +29,11 @@ mixin _$ArkThemeData {
       breakpoints: ArkBreakpoints.lerp(a.breakpoints, b.breakpoints, t),
       sonnerTheme: ArkSonnerTheme.lerp(a.sonnerTheme, b.sonnerTheme, t),
       hoverStrategies: t < 0.5 ? a.hoverStrategies : b.hoverStrategies,
+      defaultKeyboardToolbarTheme: ArkDefaultKeyboardToolbarTheme.lerp(
+          a.defaultKeyboardToolbarTheme,
+          b.defaultKeyboardToolbarTheme,
+          t
+      )
     );
   }
 
@@ -51,7 +56,8 @@ mixin _$ArkThemeData {
     ArkDecoration? decoration,
     ArkTextTheme? textTheme,
     ArkSonnerTheme? sonnerTheme,
-    ArkCardTheme? cardTheme
+    ArkCardTheme? cardTheme,
+    ArkDefaultKeyboardToolbarTheme? defaultKeyboardToolbarTheme
 }) {
     final _this = (this as ArkThemeData);
 
@@ -71,6 +77,7 @@ mixin _$ArkThemeData {
       disabledOpacity: disabledOpacity ?? _this.disabledOpacity,
       hoverStrategies: hoverStrategies ?? _this.hoverStrategies,
       disableSecondaryBorder: disableSecondaryBorder ?? _this.disableSecondaryBorder,
+      defaultKeyboardToolbarTheme: defaultKeyboardToolbarTheme ?? _this.defaultKeyboardToolbarTheme,
     );
   }
 
@@ -98,7 +105,8 @@ mixin _$ArkThemeData {
         decoration: _this.decoration.merge(other.decoration),
         breakpoints: other.breakpoints,
         disableSecondaryBorder: other.disableSecondaryBorder,
-        cardTheme: _this.cardTheme.merge(other.cardTheme)
+        cardTheme: _this.cardTheme.merge(other.cardTheme),
+        defaultKeyboardToolbarTheme: _this.defaultKeyboardToolbarTheme.merge(other.defaultKeyboardToolbarTheme)
     );
   }
 }

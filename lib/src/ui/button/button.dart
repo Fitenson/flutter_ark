@@ -5,7 +5,7 @@ import 'package:flutter_ark/src/theme/data.dart';
 import 'package:flutter_ark/src/theme/decorator.dart';
 import 'package:flutter_ark/src/theme/theme.dart';
 import 'package:flutter_ark/src/ui/button/theme/button.theme.dart';
-import 'package:flutter_ark/src/ui/components/focusable.dart';
+import 'package:flutter_ark/src/components/focusable.dart';
 import 'package:flutter_ark/src/utils/gesture_detector.dart';
 import 'package:flutter_ark/src/utils/states_controller.dart';
 import 'package:flutter_ark/src/utils/separated_iterable.dart';

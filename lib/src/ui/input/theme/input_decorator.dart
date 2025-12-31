@@ -1,0 +1,100 @@
+import 'package:flutter/widgets.dart';
+import 'package:flutter_ark/src/theme/decorator.dart';
+import 'package:flutter_ark/src/theme/theme.dart';
+import 'package:flutter_ark/src/utils/extensions/text_style.dart';
+
+class ArkInputDecorator extends StatelessWidget {
+  const ArkInputDecorator({
+    super.key,
+    this.child,
+    this.label,
+    this.error,
+    this.description,
+    this.decoration,
+  });
+
+  final Widget? child;
+  final Widget? label;
+  final Widget? error;
+  final Widget? description;
+  final ArkDecoration? decoration;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = ArkTheme.of(context);
+    final effectiveDecoration = theme.decoration.merge(decoration);
+    final hasError = effectiveDecoration.hasError ?? false;
+
+    final effectiveFallbackToLabelStyle =
+        effectiveDecoration.fallbackToLabelStyle ?? true;
+
+    final defaultErrorStyle = theme.textTheme.muted.copyWith(
+      fontWeight: FontWeight.w500,
+      color: theme.colorScheme.destructive,
+    );
+
+    final defaultLabelStyle = theme.textTheme.muted.copyWith(
+      fontWeight: FontWeight.w500,
+      color: theme.colorScheme.foreground,
+    );
+
+    final effectiveErrorStyle =
+        effectiveDecoration.errorStyle ?? defaultErrorStyle;
+
+    var effectiveLabelStyle = switch (hasError) {
+      true => effectiveDecoration.errorLabelStyle,
+      false => effectiveDecoration.labelStyle,
+    };
+
+    if (effectiveFallbackToLabelStyle && effectiveLabelStyle == null) {
+      effectiveLabelStyle =
+          effectiveDecoration.labelStyle ??
+              switch (hasError) {
+                true => defaultErrorStyle,
+                false => defaultLabelStyle,
+              };
+    }
+
+    final effectiveDescriptionStyle =
+    (effectiveDecoration.descriptionStyle ?? theme.textTheme.muted)
+        .fallback(color: theme.colorScheme.mutedForeground);
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        if (label != null)
+          Padding(
+            padding:
+            effectiveDecoration.labelPadding ??
+                const EdgeInsets.only(bottom: 8),
+            child: DefaultTextStyle(
+              style: effectiveLabelStyle!,
+              child: label!,
+            ),
+          ),
+        ?child,
+        if (description != null)
+          Padding(
+            padding:
+            effectiveDecoration.descriptionPadding ??
+                const EdgeInsets.only(top: 8),
+            child: DefaultTextStyle(
+              style: effectiveDescriptionStyle,
+              child: description!,
+            ),
+          ),
+        if (error != null)
+          Padding(
+            padding:
+            effectiveDecoration.errorPadding ??
+                const EdgeInsets.only(top: 8),
+            child: DefaultTextStyle(
+              style: effectiveErrorStyle,
+              child: error!,
+            ),
+          ),
+      ],
+    );
+  }
+}

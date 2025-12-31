@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import 'package:flutter_ark/src/utils/border.dart';
-import 'package:flutter_ark/src/utils/extension/text_style.dart';
+import 'package:flutter_ark/src/utils/extensions/text_style.dart';
 import 'package:flutter_ark/src/theme/theme.dart';
 
 // A customizable card widget for displaying structured content.
