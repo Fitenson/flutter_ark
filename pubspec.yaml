@@ -16,7 +16,6 @@ dependencies:
   flutter_svg: ^2.2.3
   intl: ^0.20.2
   lucide_icons_flutter: ^3.1.9
-  shadcn_ui: ^0.42.0
   theme_extensions_builder_annotation: ^7.1.0
   two_dimensional_scrollables: ^0.3.7
 
