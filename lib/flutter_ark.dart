@@ -20,6 +20,7 @@ export 'src/app.dart';
 
 //  UI Components
 export 'src/ui/button/button.dart';
+export 'src/ui/button/icon_button.dart';
 export 'src/ui/card/card.dart';
 export 'src/ui/input/input.dart';
 export 'src/ui/form/form.dart';
