@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_localizations/flutter_localizations.dart'
@@ -578,6 +576,33 @@ class _ArkAppState extends State<ArkApp> {
   Widget _buildApp(BuildContext context) {
     final mTheme = materialTheme(context);
     final theme = ArkTheme.of(context);
+
+    final TextStyle defaultTextStyle = TextStyle(
+        color: theme.colorScheme.foreground,
+        fontSize: 16,
+        fontWeight: FontWeight.normal
+    );
+
+    final ThemeData updatedTheme = mTheme.copyWith(
+      textTheme: TextTheme(
+        bodyLarge: defaultTextStyle,
+        bodyMedium: defaultTextStyle,
+        bodySmall: defaultTextStyle,
+        titleLarge: defaultTextStyle,
+        titleMedium: defaultTextStyle,
+        titleSmall: defaultTextStyle,
+        headlineLarge: defaultTextStyle,
+        headlineMedium: defaultTextStyle,
+        headlineSmall: defaultTextStyle,
+        displayLarge: defaultTextStyle,
+        displayMedium: defaultTextStyle,
+        displaySmall: defaultTextStyle,
+        labelLarge: defaultTextStyle,
+        labelMedium: defaultTextStyle,
+        labelSmall: defaultTextStyle,
+      )
+    );
+
     switch (widget.type) {
       case ArkAppType.ark:
         if (usesRouter) {
@@ -648,9 +673,10 @@ class _ArkAppState extends State<ArkApp> {
                 },
           ),
         );
+
       case ArkAppType.custom:
         return AnimatedTheme(
-          data: mTheme,
+          data: updatedTheme,
           child: Builder(
             builder: (BuildContext context) {
               // Why are we surrounding a builder with a builder?

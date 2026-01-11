@@ -163,7 +163,7 @@ mixin _$ArkButtonTheme {
       textDirection: other.textDirection,
       gap: other.gap,
       expands: other.expands,
-      textStyle: _this.textStyle?.merge(other.textStyle) ?? other.textStyle,
+      textStyle: _this.textStyle?.merge(other.textStyle) ?? other.textStyle ?? const TextStyle(),
     );
   }
 

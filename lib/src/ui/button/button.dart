@@ -136,6 +136,285 @@ final class ArkButton extends StatefulWidget {
     this.canRequestFocus,
   });
 
+  /// Creates a destructive variant button widget, typically for warning or
+  /// error actions.
+  const ArkButton.destructive({
+    super.key,
+    this.child,
+    this.leading,
+    this.trailing,
+    this.onPressed,
+    this.size,
+    this.cursor,
+    this.width,
+    this.height,
+    this.padding,
+    this.backgroundColor,
+    this.hoverBackgroundColor,
+    this.foregroundColor,
+    this.hoverForegroundColor,
+    this.autoFocus = false,
+    this.focusNode,
+    this.pressedBackgroundColor,
+    this.pressedForegroundColor,
+    this.shadows,
+    this.gradient,
+    this.textDecoration,
+    this.hoverTextDecoration,
+    this.decoration,
+    this.enabled = true,
+    this.onLongPress,
+    this.statesController,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.hoverStrategies,
+    this.onHoverChange,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTapCancel,
+    this.onSecondaryTapDown,
+    this.onSecondaryTapUp,
+    this.onSecondaryTapCancel,
+    this.onLongPressStart,
+    this.onLongPressCancel,
+    this.onLongPressUp,
+    this.onLongPressDown,
+    this.onLongPressEnd,
+    this.onDoubleTap,
+    this.onDoubleTapDown,
+    this.onDoubleTapCancel,
+    this.longPressDuration,
+    this.textDirection,
+    this.gap,
+    this.onFocusChange,
+    this.expands,
+    this.textStyle,
+    this.canRequestFocus,
+  }) : variant = ArkButtonVariant.destructive;
+
+  /// Creates an outline variant button widget, typically with a bordered
+  /// appearance.
+  const ArkButton.outline({
+    super.key,
+    this.child,
+    this.leading,
+    this.trailing,
+    this.onPressed,
+    this.size,
+    this.cursor,
+    this.width,
+    this.height,
+    this.padding,
+    this.backgroundColor,
+    this.hoverBackgroundColor,
+    this.foregroundColor,
+    this.hoverForegroundColor,
+    this.autoFocus = false,
+    this.focusNode,
+    this.pressedBackgroundColor,
+    this.pressedForegroundColor,
+    this.shadows,
+    this.gradient,
+    this.textDecoration,
+    this.hoverTextDecoration,
+    this.decoration,
+    this.enabled = true,
+    this.onLongPress,
+    this.statesController,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.hoverStrategies,
+    this.onHoverChange,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTapCancel,
+    this.onSecondaryTapDown,
+    this.onSecondaryTapUp,
+    this.onSecondaryTapCancel,
+    this.onLongPressStart,
+    this.onLongPressCancel,
+    this.onLongPressUp,
+    this.onLongPressDown,
+    this.onLongPressEnd,
+    this.onDoubleTap,
+    this.onDoubleTapDown,
+    this.onDoubleTapCancel,
+    this.longPressDuration,
+    this.textDirection,
+    this.gap,
+    this.onFocusChange,
+    this.expands,
+    this.textStyle,
+    this.canRequestFocus,
+  }) : variant = ArkButtonVariant.outline;
+
+  /// Creates a secondary variant button widget, typically for less prominent
+  /// actions.
+  const ArkButton.secondary({
+    super.key,
+    this.child,
+    this.leading,
+    this.trailing,
+    this.onPressed,
+    this.size,
+    this.cursor,
+    this.width,
+    this.height,
+    this.padding,
+    this.backgroundColor,
+    this.hoverBackgroundColor,
+    this.foregroundColor,
+    this.hoverForegroundColor,
+    this.autoFocus = false,
+    this.focusNode,
+    this.pressedBackgroundColor,
+    this.pressedForegroundColor,
+    this.shadows,
+    this.gradient,
+    this.textDecoration,
+    this.hoverTextDecoration,
+    this.decoration,
+    this.enabled = true,
+    this.onLongPress,
+    this.statesController,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.hoverStrategies,
+    this.onHoverChange,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTapCancel,
+    this.onSecondaryTapDown,
+    this.onSecondaryTapUp,
+    this.onSecondaryTapCancel,
+    this.onLongPressStart,
+    this.onLongPressCancel,
+    this.onLongPressUp,
+    this.onLongPressDown,
+    this.onLongPressEnd,
+    this.onDoubleTap,
+    this.onDoubleTapDown,
+    this.onDoubleTapCancel,
+    this.longPressDuration,
+    this.textDirection,
+    this.gap,
+    this.onFocusChange,
+    this.expands,
+    this.textStyle,
+    this.canRequestFocus,
+  }) : variant = ArkButtonVariant.secondary;
+
+  /// Creates a ghost variant button widget, typically with minimal styling.
+  const ArkButton.ghost({
+    super.key,
+    this.child,
+    this.leading,
+    this.trailing,
+    this.onPressed,
+    this.size,
+    this.cursor,
+    this.width,
+    this.height,
+    this.padding,
+    this.backgroundColor,
+    this.hoverBackgroundColor,
+    this.foregroundColor,
+    this.hoverForegroundColor,
+    this.autoFocus = false,
+    this.focusNode,
+    this.pressedBackgroundColor,
+    this.pressedForegroundColor,
+    this.shadows,
+    this.gradient,
+    this.textDecoration,
+    this.hoverTextDecoration,
+    this.decoration,
+    this.enabled = true,
+    this.onLongPress,
+    this.statesController,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.hoverStrategies,
+    this.onHoverChange,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTapCancel,
+    this.onSecondaryTapDown,
+    this.onSecondaryTapUp,
+    this.onSecondaryTapCancel,
+    this.onLongPressStart,
+    this.onLongPressCancel,
+    this.onLongPressUp,
+    this.onLongPressDown,
+    this.onLongPressEnd,
+    this.onDoubleTap,
+    this.onDoubleTapDown,
+    this.onDoubleTapCancel,
+    this.longPressDuration,
+    this.textDirection,
+    this.gap,
+    this.onFocusChange,
+    this.expands,
+    this.textStyle,
+    this.canRequestFocus,
+  }) : variant = ArkButtonVariant.ghost;
+
+  /// Creates a link variant button widget, styled like a hyperlink.
+  const ArkButton.link({
+    super.key,
+    required this.child,
+    this.onPressed,
+    this.size,
+    this.cursor,
+    this.width,
+    this.height,
+    this.padding,
+    this.backgroundColor,
+    this.hoverBackgroundColor,
+    this.foregroundColor,
+    this.hoverForegroundColor,
+    this.autoFocus = false,
+    this.focusNode,
+    this.pressedBackgroundColor,
+    this.pressedForegroundColor,
+    this.shadows,
+    this.gradient,
+    this.textDecoration,
+    this.hoverTextDecoration,
+    this.decoration,
+    this.enabled = true,
+    this.onLongPress,
+    this.statesController,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
+    this.hoverStrategies,
+    this.onHoverChange,
+    this.onTapDown,
+    this.onTapUp,
+    this.onTapCancel,
+    this.onSecondaryTapDown,
+    this.onSecondaryTapUp,
+    this.onSecondaryTapCancel,
+    this.onLongPressStart,
+    this.onLongPressCancel,
+    this.onLongPressUp,
+    this.onLongPressDown,
+    this.onLongPressEnd,
+    this.onDoubleTap,
+    this.onDoubleTapDown,
+    this.onDoubleTapCancel,
+    this.longPressDuration,
+    this.textDirection,
+    this.gap,
+    this.onFocusChange,
+    this.expands,
+    this.leading,
+    this.trailing,
+    this.textStyle,
+    this.canRequestFocus,
+  }) : variant = ArkButtonVariant.link;
+
+
   final VoidCallback? onPressed;
   final VoidCallback? onLongPress;
   final Widget? child;
@@ -238,7 +517,7 @@ class _ArkButtonState extends State<ArkButton> {
   }
 
   ArkButtonTheme buttonTheme(ArkThemeData theme) {
-    return switch(widget.variant) {
+    var variant = switch(widget.variant) {
       ArkButtonVariant.primary => theme.primaryButtonTheme,
       ArkButtonVariant.secondary => theme.secondaryButtonTheme,
       ArkButtonVariant.destructive => theme.destructiveButtonTheme,
@@ -246,6 +525,7 @@ class _ArkButtonState extends State<ArkButton> {
       ArkButtonVariant.outline => theme.outlineButtonTheme,
       ArkButtonVariant.link => theme.linkButtonTheme
     };
+    return variant;
   }
 
   ArkButtonSizeTheme sizeTheme(ArkThemeData theme, ArkButtonSize size) {
@@ -284,7 +564,7 @@ class _ArkButtonState extends State<ArkButton> {
 
   Color foreground(ArkThemeData theme) {
     if(widget.foregroundColor != null) return widget.foregroundColor!;
-    return buttonTheme(theme).hoverForegroundColor!;
+    return buttonTheme(theme).foregroundColor!;
   }
 
   Color hoverForeground(ArkThemeData theme) {
@@ -414,7 +694,8 @@ class _ArkButtonState extends State<ArkButton> {
                   : foreground(theme);
 
               final updatedDecoration = effectiveDecoration.copyWith(
-                color: effectiveBackgroundColor,
+                color: Color(0xfff8fafc),
+                // color: effectiveBackgroundColor,
                 gradient: gradient(theme),
                 shadows: shadows(theme),
               );
@@ -422,7 +703,7 @@ class _ArkButtonState extends State<ArkButton> {
               final effectiveWidth = width(theme) ?? 0;
               final effectiveHeight = height(theme);
 
-              var child = widget.child;
+              var child = widget.child ?? const SizedBox.shrink();
 
               if(widget.child != null && effectiveExpands) {
                 child = Expanded(child: widget.child!);
@@ -430,7 +711,7 @@ class _ArkButtonState extends State<ArkButton> {
 
               return IconTheme(
                   data: iconTheme.copyWith(color: effectiveForegroundColor),
-                  child: DefaultTextStyle(
+                  child: effectiveTextStyle != null ? DefaultTextStyle(
                       style: effectiveTextStyle!.copyWith(
                         color: effectiveForegroundColor,
                         decoration: textDecoration(theme, hovered: hovered)
@@ -495,7 +776,6 @@ class _ArkButtonState extends State<ArkButton> {
                                     onLongPressDown: widget.onLongPressDown,
                                     onLongPressStart: widget.onLongPressStart,
                                     longPressDuration: effectiveLongPressDuration,
-
                                     child: SelectionContainer.disabled(
                                         child: ConstrainedBox(
                                             constraints: BoxConstraints(
@@ -525,7 +805,7 @@ class _ArkButtonState extends State<ArkButton> {
                           ),
                         ),
                       )
-                  )
+                  ) : child
               );
             }
         )

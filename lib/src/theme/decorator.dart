@@ -209,11 +209,11 @@ class ArkDecorator extends StatelessWidget {
   }
 }
 
-/// {@template shadOutwardBorderPainter}
+/// {@template ArkOutwardBorderPainter}
 /// A [CustomPainter] that paints a border outward from the given rectangle.
 /// {@endtemplate}
 class ArkOutwardBorderPainter extends CustomPainter {
-  /// {@macro shadOutwardBorderPainter}
+  /// {@macro ArkOutwardBorderPainter}
   const ArkOutwardBorderPainter({
     required this.border,
     required this.offset,
