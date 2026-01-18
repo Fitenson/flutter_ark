@@ -694,8 +694,7 @@ class _ArkButtonState extends State<ArkButton> {
                   : foreground(theme);
 
               final updatedDecoration = effectiveDecoration.copyWith(
-                color: Color(0xfff8fafc),
-                // color: effectiveBackgroundColor,
+                color: effectiveBackgroundColor,
                 gradient: gradient(theme),
                 shadows: shadows(theme),
               );

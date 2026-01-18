@@ -29,6 +29,7 @@ export 'src/ui/form/fields/input.dart';
 
 //  Navigation Components
 export 'src/navigation/router.dart';
+export 'src/navigation/navigation.state.dart';
 
 //  Reusable Components
 export 'src/components/focusable.dart';

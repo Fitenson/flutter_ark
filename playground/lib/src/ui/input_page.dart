@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ark/flutter_ark.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 enum InputStyle {
   email,
   password
 }
 
-class InputPage extends StatelessWidget {
+class InputPage extends ConsumerWidget {
   const InputPage({
     super.key,
     required this.style
@@ -15,7 +16,7 @@ class InputPage extends StatelessWidget {
   final InputStyle style;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return  Scaffold(
       body: Center(
         child: ConstrainedBox(
@@ -30,11 +31,11 @@ class InputPage extends StatelessWidget {
   }
 }
 
-class EmailInput extends StatelessWidget {
+class EmailInput extends ConsumerWidget {
   const EmailInput({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return const ArkInput(
       placeholder: Text('Email'),
       keyboardType: TextInputType.emailAddress,
@@ -42,14 +43,14 @@ class EmailInput extends StatelessWidget {
   }
 }
 
-class PasswordInput extends StatefulWidget {
+class PasswordInput extends ConsumerStatefulWidget {
   const PasswordInput({super.key});
 
   @override
-  State<StatefulWidget> createState() => _PasswordInputState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _PasswordInputState();
 }
 
-class _PasswordInputState extends State<PasswordInput> {
+class _PasswordInputState extends ConsumerState<PasswordInput> {
   bool obscure = true;
 
   @override
